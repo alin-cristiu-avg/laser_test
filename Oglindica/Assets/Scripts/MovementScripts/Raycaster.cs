@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Raycaster : MonoBehaviour
@@ -19,13 +17,13 @@ public class Raycaster : MonoBehaviour
         Instance = this;
     }
 
-    public MovementHelper GetHitObject()
+    public MovementHelper GetHitObject(bool neededForMovement)
     {
         MovementHelper hitObject = null;
         DoRacycast();
         if(_hit.transform != null)
         {
-            hitObject = _hit.transform.GetComponent<MovementHelper>();
+            hitObject = neededForMovement ? _hit.transform.GetComponent<GameElement>()?.GetMovementHelperForMovement() : _hit.transform.GetComponent<GameElement>()?.GetMovementHelperForRotation();
         }
 
         return hitObject;

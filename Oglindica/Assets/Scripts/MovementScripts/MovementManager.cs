@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MovementManager : MonoBehaviour
@@ -18,7 +16,7 @@ public class MovementManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            _objectToMove = Raycaster.Instance.GetHitObject();
+            _objectToMove = Raycaster.Instance.GetHitObject(true);
             if (_objectToMove != null)
             {
                 _objectToMove.ManageCollider(false);
@@ -27,7 +25,7 @@ public class MovementManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            _objectToRotate = Raycaster.Instance.GetHitObject();
+            _objectToRotate = Raycaster.Instance.GetHitObject(false);
             if (_objectToMove != null)
             {
                 _objectToMove.ManageCollider(false);
