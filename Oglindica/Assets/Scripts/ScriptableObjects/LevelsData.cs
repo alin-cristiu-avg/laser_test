@@ -29,15 +29,34 @@ public class LevelsData : ScriptableObject
     {
         return _selectedLevel;
     }
+
+    public List<GameElementPositioning> GetSelectedLevelObjects()
+    {
+        return levels[_selectedLevel].gameElementsData;
+    }
+
+    public void SaveSelectedLevelObjects(List<GameElementPositioning> objectsPositions)
+    {
+        levels[_selectedLevel].gameElementsData = objectsPositions;
+    }
 }
 
 [Serializable]
 public class LevelData
 {
     public string levelName;
+    public List<GameElementPositioning> gameElementsData = new List<GameElementPositioning>();
 
     public void SetLevelName(string levelName)
     {
         this.levelName = levelName;
     }
+}
+
+[Serializable]
+public struct GameElementPositioning
+{
+    public GameElementsData.GameElementType type;
+    public Vector3 position;
+    public Vector3 rotation;
 }

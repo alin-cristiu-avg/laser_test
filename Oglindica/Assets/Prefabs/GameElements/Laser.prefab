@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1457977927066362425}
   - component: {fileID: 8446891990761783444}
   - component: {fileID: 6861972175495743970}
-  - component: {fileID: 7319084398243452477}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7319084398243452477
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746143223733696054}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5691721344700262569
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +94,7 @@ GameObject:
   - component: {fileID: 6755630551491482071}
   - component: {fileID: 3550458410296196861}
   - component: {fileID: 3749994799186764953}
+  - component: {fileID: 9215142966941762400}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -143,8 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984c54ef222da424482cf14f66633bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanMove: 0
-  CanRotate: 0
+  CanMove: 1
+  CanRotate: 1
   gameElementType: 1
   movementHelper: {fileID: 3749994799186764953}
 --- !u!114 &3749994799186764953
@@ -159,6 +146,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ed30f29adcd6344b0c61af55c11da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &9215142966941762400
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5691721344700262569}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.75, y: 0.5, z: 0.5}
+  m_Center: {x: 0.125, y: 0, z: 0}
 --- !u!1 &6076626676119877861
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +170,6 @@ GameObject:
   - component: {fileID: 6908925083464465291}
   - component: {fileID: 6022885661104145054}
   - component: {fileID: 8371047386998419730}
-  - component: {fileID: 6043491318917947202}
   m_Layer: 0
   m_Name: Geometry
   m_TagString: Untagged
@@ -187,7 +186,7 @@ Transform:
   m_GameObject: {fileID: 6076626676119877861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1457977927066362425}
@@ -244,16 +243,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6043491318917947202
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6076626676119877861}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}

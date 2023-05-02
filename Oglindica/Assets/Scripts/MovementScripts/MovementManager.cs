@@ -37,6 +37,7 @@ public class MovementManager : MonoBehaviour
             if(_objectToMove != null)
             {
                 _objectToMove.ManageCollider(true);
+                GameManager.Instance.SaveGameElements();
             }
             _objectToMove = null;
         }
@@ -46,6 +47,7 @@ public class MovementManager : MonoBehaviour
             if (_objectToRotate != null)
             {
                 _objectToRotate.ManageCollider(true);
+                GameManager.Instance.SaveGameElements();
             }
             _objectToRotate = null;
         }

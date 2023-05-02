@@ -23,7 +23,7 @@ public class Raycaster : MonoBehaviour
         DoRacycast();
         if(_hit.transform != null)
         {
-            hitObject = neededForMovement ? _hit.transform.GetComponent<GameElement>()?.GetMovementHelperForMovement() : _hit.transform.GetComponent<GameElement>()?.GetMovementHelperForRotation();
+            hitObject = neededForMovement ? _hit.transform.GetComponentInParent<GameElement>()?.GetMovementHelperForMovement() : _hit.transform.GetComponentInParent<GameElement>()?.GetMovementHelperForRotation();
         }
 
         return hitObject;

@@ -77,6 +77,8 @@ public class LevelsHandler : MonoBehaviour
 
         _levels[_selectedLevel].LevelButton.interactable = false;
 
+        GameManager.Instance.CreateInitialElements();
+
         m_UpdateMainMenuBtns?.Invoke();
     }
 

@@ -4,6 +4,7 @@ public class GameElement : MonoBehaviour
 {
     public bool CanMove;
     public bool CanRotate;
+    public GameElementsData.GameElementType GameElementType => gameElementType;
 
     [SerializeField] private GameElementsData.GameElementType gameElementType;
     [SerializeField] private MovementHelper movementHelper;

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1191208584821344496}
   - component: {fileID: 203704494169560492}
   - component: {fileID: 3375184728504890882}
+  - component: {fileID: 609175924169253426}
   m_Layer: 0
   m_Name: DoorSensor
   m_TagString: Untagged
@@ -46,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d1229dddaa34f4dbbf0d67c1085b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanMove: 0
-  CanRotate: 0
+  CanMove: 1
+  CanRotate: 1
   gameElementType: 8
   movementHelper: {fileID: 3375184728504890882}
   neededColors: 00000000
@@ -63,6 +64,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ed30f29adcd6344b0c61af55c11da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &609175924169253426
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5298923098160770672}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6212409906511846266
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,7 +88,6 @@ GameObject:
   - component: {fileID: 4180990076655552118}
   - component: {fileID: 5324498708411069264}
   - component: {fileID: 9056058758470087616}
-  - component: {fileID: 6447070453011084455}
   m_Layer: 0
   m_Name: Geometry
   m_TagString: Untagged
@@ -147,16 +160,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6447070453011084455
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6212409906511846266}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}

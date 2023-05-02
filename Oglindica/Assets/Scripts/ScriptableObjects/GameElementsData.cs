@@ -35,6 +35,16 @@ public class GameElementsData : ScriptableObject
     private Dictionary<GameElementType, GameElementStructure> _gameElementsDictionary = new Dictionary<GameElementType, GameElementStructure>();
     private Dictionary<ColorType, ColorStructure> _colorsDictionary = new Dictionary<ColorType, ColorStructure>();
 
+    public int GetGameElementsCount()
+    {
+        return gameElements.Count;
+    }
+
+    public GameElementStructure GetGameElementByIndex(int index)
+    {
+        return gameElements[index];
+    }
+
     public GameElementStructure GetGameElement(GameElementType elementType)
     {
         if(_gameElementsDictionary.Count == 0)
@@ -58,6 +68,11 @@ public class GameElementsData : ScriptableObject
                 Debug.LogError("This - " + gameElements[i].type + " - is a duplicate screen type!");
             }
         }
+    }
+
+    public int GetColorsCount()
+    {
+        return colors.Count;
     }
 
     public ColorStructure GetColor(ColorType colorType)
@@ -90,6 +105,7 @@ public class GameElementsData : ScriptableObject
 public struct GameElementStructure
 {
     public GameElementType type;
+    public Sprite preview;
     public GameElement gameElement;
 }
 
