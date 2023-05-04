@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class DoorGameElement : GameElement
 {
+    [Header("Door Vars")]
     [SerializeField] private Transform doorHinge;
     [SerializeField] private float openSpeed;
 
     private bool _openDoor = false;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         doorHinge.localScale = Vector3.one;
     }
 

@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6755630551491482071}
-  - component: {fileID: 3550458410296196861}
+  - component: {fileID: 4156338931349080639}
   - component: {fileID: 3749994799186764953}
   - component: {fileID: 9215142966941762400}
   m_Layer: 0
@@ -115,10 +115,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6908925083464465291}
+  - {fileID: 4630495172587348727}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3550458410296196861
+--- !u!114 &4156338931349080639
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,13 +128,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 5691721344700262569}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 984c54ef222da424482cf14f66633bfb, type: 3}
+  m_Script: {fileID: 11500000, guid: bdfcc66b70c9ac34e8d91bad7488cce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanMove: 1
-  CanRotate: 1
+  canMove: 1
+  canRotate: 1
   gameElementType: 1
   movementHelper: {fileID: 3749994799186764953}
+  gameElementsData: {fileID: 11400000, guid: 37aa8138cd52d5f44a83c3c11604609b, type: 2}
+  laserPrefab: {fileID: 8390719859686051131, guid: 4c56545fb3d10874a9bedd9b08ec330e, type: 3}
+  laserContainer: {fileID: 4630495172587348727}
 --- !u!114 &3749994799186764953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,3 +247,34 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &8174618113133885933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4630495172587348727}
+  m_Layer: 0
+  m_Name: Laser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4630495172587348727
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8174618113133885933}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6755630551491482071}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

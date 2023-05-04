@@ -14,3 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - levelName: Level 1
+    gameElementsData:
+    - type: 1
+      position: {x: -7.284096, y: 4.10538, z: 0}
+      rotation: {x: -0, y: 0, z: 0}
+    - type: 2
+      position: {x: 1.5526899, y: 0.56232905, z: 0}
+      rotation: {x: -1.0177775e-13, y: 180, z: 30.465574}
+    - type: 2
+      position: {x: -0.093786985, y: 4.5013676, z: 0}
+      rotation: {x: -0, y: 180, z: 303.69}
+    - type: 6
+      position: {x: -1.7402633, y: 2.208806, z: 0}
+      rotation: {x: -0, y: 0, z: 0}
+    - type: 8
+      position: {x: -7.9301815, y: -0.33385444, z: 0}
+      rotation: {x: -0, y: 0, z: 0}
+    - type: 4
+      position: {x: -3.1574833, y: 0.15592015, z: 0}
+      rotation: {x: -0, y: 0, z: 0}

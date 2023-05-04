@@ -31,5 +31,7 @@ public abstract class ScreenObject : MonoBehaviour
     protected void GoToMainMenu()
     {
         UIManager.Instance.LoadScreen(ScreensData.ScreenType.MainMenu);
+        GameManager.Instance.IsInEditor = ScreensData.ScreenType.MainMenu;
+        GameElement.SetIsEditor?.Invoke(GameManager.Instance.IsInEditor);
     }
 }

@@ -51,6 +51,11 @@ public class MovementManager : MonoBehaviour
             }
             _objectToRotate = null;
         }
+
+        if(Input.GetMouseButton(0) || Input.GetMouseButton(1))
+        {
+            LaserGameElement.UpdateLasers?.Invoke();
+        }
     }
 
     private void MovementObjects()

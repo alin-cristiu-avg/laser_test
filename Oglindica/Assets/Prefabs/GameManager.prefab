@@ -44,3 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ac174c4114c9e4f92fcf7e0ed81058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameElementsData: {fileID: 11400000, guid: 37aa8138cd52d5f44a83c3c11604609b, type: 2}
+  levelsData: {fileID: 11400000, guid: cb7bbc762994d59449029692d94923ec, type: 2}
+  movementManager: {fileID: 0}

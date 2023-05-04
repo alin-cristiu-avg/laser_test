@@ -3,5 +3,11 @@ using UnityEngine;
 
 public class DoorSensorGameElement : GameElement
 {
-    [SerializeField] private List<GameElementsData.ColorType> neededColors;
+    [Header("Door Sensor Vars")]
+    [SerializeField] private ColorStructure neededColor;
+
+    public bool IsCorrectColor(Color rayColor)
+    {
+        return rayColor == neededColor.color;
+    }
 }

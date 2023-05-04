@@ -520,10 +520,6 @@ PrefabInstance:
       propertyPath: movementManager
       value: 
       objectReference: {fileID: 1252008501}
-    - target: {fileID: 5774351780521427389, guid: 1aaa41b1994a0a74daeac3f6efb2618e, type: 3}
-      propertyPath: gameElementsData
-      value: 
-      objectReference: {fileID: 11400000, guid: 37aa8138cd52d5f44a83c3c11604609b, type: 2}
     - target: {fileID: 7220218124907606459, guid: 1aaa41b1994a0a74daeac3f6efb2618e, type: 3}
       propertyPath: m_RootOrder
       value: 5

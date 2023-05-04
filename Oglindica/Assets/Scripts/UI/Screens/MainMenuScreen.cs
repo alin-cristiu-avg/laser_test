@@ -58,11 +58,15 @@ public class MainMenuScreen : ScreenObject
     private void GoToPlay()
     {
         UIManager.Instance.LoadScreen(ScreensData.ScreenType.PlayMenu);
+        GameManager.Instance.IsInEditor = ScreensData.ScreenType.PlayMenu;
+        GameElement.SetIsEditor?.Invoke(GameManager.Instance.IsInEditor);
     }
 
     private void GoToEdit()
     {
         UIManager.Instance.LoadScreen(ScreensData.ScreenType.Editor);
+        GameManager.Instance.IsInEditor = ScreensData.ScreenType.Editor;
+        GameElement.SetIsEditor?.Invoke(GameManager.Instance.IsInEditor);
     }
 
     

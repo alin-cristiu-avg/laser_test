@@ -3,13 +3,14 @@ using UnityEngine;
 public class FilterGameElement : GameElement
 {
     [Header("Filter Vars")]
-    [SerializeField] private GameElementsData gameElementsData;
-
     [SerializeField] private GameElementsData.ColorType filterColor;
     [SerializeField] private Renderer filterRenderer;
 
-    private void Start()
+    public GameElementsData.ColorType FilterColor => filterColor;
+
+    protected override void Start()
     {
+        base.Start();
         SetColor();
     }
 

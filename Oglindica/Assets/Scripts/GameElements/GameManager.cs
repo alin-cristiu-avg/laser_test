@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public ScreensData.ScreenType IsInEditor;
+
     [SerializeField] private GameElementsData gameElementsData;
     [SerializeField] private LevelsData levelsData;
     [SerializeField] private MovementManager movementManager;
@@ -16,6 +18,7 @@ public class GameManager : MonoBehaviour
     public void Awake()
     {
         Instance = this;
+        IsInEditor = ScreensData.ScreenType.MainMenu;
         Application.targetFrameRate = 60;
     }
 
@@ -44,6 +47,15 @@ public class GameManager : MonoBehaviour
             _spawnedGameElements[_spawnedGameElements.Count - 1].transform.position = selectedLevelObjects[i].position;
             _spawnedGameElements[_spawnedGameElements.Count - 1].transform.eulerAngles = selectedLevelObjects[i].rotation;
         }
+
+        GameElement.SetIsEditor?.Invoke(IsInEditor);
+        StartCoroutine(UpdateLasers());
+    }
+
+    private IEnumerator UpdateLasers()
+    {
+        yield return new WaitForSeconds(0.1f);
+        LaserGameElement.UpdateLasers?.Invoke();
     }
 
     public void SaveGameElements()

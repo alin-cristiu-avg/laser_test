@@ -26,7 +26,8 @@ public class GameElementsData : ScriptableObject
         Red,
         Purple,
         Blue,
-        Green
+        Green,
+        White
     }
 
     [SerializeField] private List<GameElementStructure> gameElements = new List<GameElementStructure>();

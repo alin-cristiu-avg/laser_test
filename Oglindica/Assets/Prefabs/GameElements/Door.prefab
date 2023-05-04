@@ -196,8 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b681d12c134214192c94037d70830e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanMove: 1
-  CanRotate: 1
+  canMove: 1
+  canRotate: 1
   gameElementType: 7
   movementHelper: {fileID: 2477745868694604084}
   doorHinge: {fileID: 4013436297351359343}

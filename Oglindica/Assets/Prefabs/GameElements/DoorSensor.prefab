@@ -47,11 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d1229dddaa34f4dbbf0d67c1085b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanMove: 1
-  CanRotate: 1
+  canMove: 1
+  canRotate: 1
   gameElementType: 8
   movementHelper: {fileID: 3375184728504890882}
-  neededColors: 00000000
+  neededColor: 0
 --- !u!114 &3375184728504890882
 MonoBehaviour:
   m_ObjectHideFlags: 0
