@@ -166,7 +166,7 @@ public class LaserGameElement : GameElement
 
     private void AddLaser(Vector3 offsetPosition, Vector3 dir)
     {
-        _spawnedLasers.Add(Instantiate(laserPrefab, offsetPosition, Quaternion.LookRotation(dir)));
+        _spawnedLasers.Add(Instantiate(laserPrefab, offsetPosition, Quaternion.LookRotation(dir), transform));
         _spawnedLasers[_spawnedLasers.Count - 1].SetPosition(0, Vector3.zero);
     }
 

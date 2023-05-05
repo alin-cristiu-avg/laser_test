@@ -21,5 +21,3 @@ MonoBehaviour:
     screen: {fileID: 8402580413506039430, guid: 2a3ae4405813e5d4a87b04e9be1463b2, type: 3}
   - screenType: 4
     screen: {fileID: 4997619304230977431, guid: 41c8ca850d11112498f449d4ae9f8751, type: 3}
-  - screenType: 5
-    screen: {fileID: -7002084190562990591, guid: e3157bcb2e47ee242933c2170af8912d, type: 3}

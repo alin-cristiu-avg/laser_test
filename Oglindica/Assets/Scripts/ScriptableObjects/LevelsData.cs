@@ -7,8 +7,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "LevelsData", menuName = "Scriptable Objects/Level Data", order = 1)]
 public class LevelsData : ScriptableObject
 {
-    private const string META_EXTENSION = ".meta";
-    private const string levelsPreviewFolder = "{0}/LevelsPreview";
+    public const string META_EXTENSION = ".meta";
+    private const string LEVELS_PREVIEW_DIRECTORY = "{0}/LevelsPreview";
 
     public List<LevelData> levels = new List<LevelData>();
 
@@ -23,6 +23,11 @@ public class LevelsData : ScriptableObject
     private void InitNewLevelData(LevelData newLevel)
     {
         newLevel.levelName = $"Level {levels.Count - 1}";
+    }
+
+    public void UpdateLevelData()
+    {
+
     }
 
     public void SetSelectedLevel(int level)
@@ -47,7 +52,7 @@ public class LevelsData : ScriptableObject
 
     public void SaveLevelPreview(byte[] screenshotData)
     {
-        string path = string.Format(levelsPreviewFolder, Application.dataPath);
+        string path = string.Format(LEVELS_PREVIEW_DIRECTORY, Application.dataPath);
         if (!Directory.Exists(path))
         {
             Directory.CreateDirectory(path);
@@ -88,12 +93,8 @@ public class LevelsData : ScriptableObject
 
                 if (!isUsed)
                 {
-                    Debug.LogError("Not Used");
-                    //File.Delete(file.FullName);
-                }
-                else
-                {
-                    Debug.LogError("Used");
+                    Debug.LogError("Deleting unused file : " + file.FullName);
+                    File.Delete(file.FullName);
                 }
             }
         }

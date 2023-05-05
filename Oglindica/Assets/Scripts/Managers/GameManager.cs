@@ -73,6 +73,15 @@ public class GameManager : MonoBehaviour
         StartCoroutine(UpdateLasers());
     }
 
+    private Vector3 FormatVector3(Vector3 input)
+    {
+        float x = float.Parse(input.x.ToString("F2"));
+        float y = float.Parse(input.y.ToString("F2"));
+        float z = float.Parse(input.z.ToString("F2"));
+
+        return new Vector3(x, y, z);
+    }
+
     private void SetAdditionalDataToGameElement(GameElement gameElement, string additionalData)
     {
         if(additionalData == "")
@@ -103,7 +112,12 @@ public class GameManager : MonoBehaviour
 
         for(int i = 0;i < _spawnedGameElements.Count; i++)
         {
-            currentPositions.Add(new GameElementPositioning() { type = _spawnedGameElements[i].GameElementType, position = _spawnedGameElements[i].transform.position, rotation = _spawnedGameElements[i].transform.eulerAngles, additionalData = GetAdditionalDataForGameElement(_spawnedGameElements[i]) });
+            currentPositions.Add(new GameElementPositioning() { 
+                type = _spawnedGameElements[i].GameElementType, 
+                position = FormatVector3(_spawnedGameElements[i].transform.position), 
+                rotation = FormatVector3(_spawnedGameElements[i].transform.eulerAngles), 
+                additionalData = GetAdditionalDataForGameElement(_spawnedGameElements[i])
+            });
         }
 
         levelsData.SaveSelectedLevelObjects(currentPositions);
@@ -141,6 +155,7 @@ public class GameManager : MonoBehaviour
                 break;
             }
         }
+
         SaveGameElements();
     }
 

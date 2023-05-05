@@ -39,6 +39,7 @@ public class MainMenuScreen : ScreenObject
     private void InitLevels(bool init)
     {
         _levelsHandler.InitLevels(init, UpdateMainMenuBtns);
+        //_levelsHandler.UpdateLevelImages();
     }
 
     private void UpdateMainMenuBtns()

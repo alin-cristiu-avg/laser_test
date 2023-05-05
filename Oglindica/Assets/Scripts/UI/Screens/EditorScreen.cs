@@ -25,6 +25,7 @@ public class EditorScreen : ScreenObject
         {
             GoToMainMenu();
             ScreenshotManager.Instance.TakeScreenshot();
+            GameManager.Instance.SaveGameElements();
         });
 
         levelNameField.Field.onEndEdit.RemoveAllListeners();

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,8 @@ public class LevelElement : MonoBehaviour
 
     public Button LevelButton => levelButton;
 
+    private LevelData _levelData;
+
     public void InitLevelElement(LevelData levelData)
     {
         if(levelData == null)
@@ -22,11 +25,26 @@ public class LevelElement : MonoBehaviour
         }
         else
         {
+            _levelData = levelData;
             levelDataObject.SetActive(true);
             levelImage.sprite = LoadPreview(levelData.levelPreviewLocation);
             levelName.Text.text = levelData.levelName;
             newLevelText.gameObject.SetActive(false);
         }
+    }
+
+    public void UpdateImages()
+    {
+        if (_levelData != null)
+        {
+            StartCoroutine(UpdateImagesDelayed());
+        }
+    }
+
+    private IEnumerator UpdateImagesDelayed()
+    {
+        yield return new WaitForSeconds(1);
+        LoadPreview(_levelData.levelPreviewLocation);
     }
 
     private Sprite LoadPreview(string path)

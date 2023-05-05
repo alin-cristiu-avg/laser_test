@@ -51,6 +51,14 @@ public class LevelsHandler : MonoBehaviour
         _levels[-1].LevelButton.onClick.AddListener(AddNewLevel);
     }
 
+    public void UpdateLevelImages()
+    {
+        foreach (KeyValuePair<int, LevelElement> level in _levels)
+        {
+            level.Value.UpdateImages();
+        }
+    }
+
     public int GetSelectedLevel()
     {
         return _selectedLevel;
