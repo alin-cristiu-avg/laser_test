@@ -47,11 +47,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d1229dddaa34f4dbbf0d67c1085b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameElementsData: {fileID: 11400000, guid: 37aa8138cd52d5f44a83c3c11604609b, type: 2}
   canMove: 1
   canRotate: 1
   gameElementType: 8
   movementHelper: {fileID: 3375184728504890882}
-  neededColor: 0
+  neededColor: 5
+  sensorRenderer: {fileID: 9056058758470087616}
 --- !u!114 &3375184728504890882
 MonoBehaviour:
   m_ObjectHideFlags: 0

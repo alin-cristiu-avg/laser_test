@@ -12,7 +12,7 @@ public class GameElementsData : ScriptableObject
         Laser,
         Mirror,
         FilterRed,
-        FilterGreen,
+        FilterYellow,
         FilterBlue,
         Wall,
         Door,
@@ -27,7 +27,8 @@ public class GameElementsData : ScriptableObject
         Purple,
         Blue,
         Green,
-        White
+        White,
+        Other
     }
 
     [SerializeField] private List<GameElementStructure> gameElements = new List<GameElementStructure>();
@@ -44,6 +45,11 @@ public class GameElementsData : ScriptableObject
     public GameElementStructure GetGameElementByIndex(int index)
     {
         return gameElements[index];
+    }
+
+    public bool GameElementIsDoor(int index)
+    {
+        return gameElements[index].type == GameElementType.Door;
     }
 
     public GameElementStructure GetGameElement(GameElementType elementType)
@@ -76,6 +82,18 @@ public class GameElementsData : ScriptableObject
         return colors.Count;
     }
 
+    public List<string> GetColorNamesList()
+    {
+        List<string> colors = new List<string>();
+
+        for(int i = 0;i < this.colors.Count; i++)
+        {
+            colors.Add(this.colors[i].type.ToString());
+        }
+
+        return colors;
+    }
+
     public ColorStructure GetColor(ColorType colorType)
     {
         if (_colorsDictionary.Count == 0)
@@ -84,6 +102,67 @@ public class GameElementsData : ScriptableObject
         }
 
         return _colorsDictionary[colorType];
+    }
+
+    public ColorStructure GetCombinedColor(ColorType lastColor, ColorType currColor)
+    {
+        if(lastColor == ColorType.White && currColor != ColorType.White)
+        {
+            return new ColorStructure() { type = currColor, color = GetColor(currColor).color };
+        }
+        else if (lastColor != ColorType.White && currColor == ColorType.White)
+        {
+            return new ColorStructure() { type = lastColor, color = GetColor(lastColor).color };
+        }
+        else if(lastColor == currColor)
+        {
+            return new ColorStructure() { type = currColor, color = GetColor(currColor).color };
+        }
+        else if(lastColor != ColorType.White && currColor != ColorType.White)
+        {
+            switch (lastColor)
+            {
+                case ColorType.Yellow:
+                    switch (currColor)
+                    {
+                        case ColorType.Red:
+                            return new ColorStructure() { type = ColorType.Orange, color = GetColor(ColorType.Orange).color };
+
+                        case ColorType.Blue:
+                            return new ColorStructure() { type = ColorType.Green, color = GetColor(ColorType.Green).color };
+                    }
+                    break;
+
+                case ColorType.Red:
+                    switch (currColor)
+                    {
+                        case ColorType.Yellow:
+                            return new ColorStructure() { type = ColorType.Orange, color = GetColor(ColorType.Orange).color };
+
+                        case ColorType.Blue:
+                            return new ColorStructure() { type = ColorType.Purple, color = GetColor(ColorType.Purple).color };
+                    }
+                    break;
+
+                case ColorType.Blue:
+                    switch (currColor)
+                    {
+                        case ColorType.Yellow:
+                            return new ColorStructure() { type = ColorType.Green, color = GetColor(ColorType.Green).color };
+
+                        case ColorType.Red:
+                            return new ColorStructure() { type = ColorType.Purple, color = GetColor(ColorType.Purple).color };
+                    }
+                    break;
+
+            }
+        }
+        else
+        {
+            return new ColorStructure() { type = ColorType.Other, color = Color.Lerp(GetColor(lastColor).color, GetColor(currColor).color, 0.5f) };
+        }
+
+        return GetColor(ColorType.White);
     }
 
     private void InitColorsDictionary()

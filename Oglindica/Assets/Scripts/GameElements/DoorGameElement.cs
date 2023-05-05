@@ -7,11 +7,14 @@ public class DoorGameElement : GameElement
     [SerializeField] private float openSpeed;
 
     private bool _openDoor = false;
+    private BoxCollider _boxCollider;
 
     protected override void Start()
     {
         base.Start();
         doorHinge.localScale = Vector3.one;
+        _boxCollider = GetComponent<BoxCollider>();
+        _boxCollider.enabled = true;
     }
 
     public void SetOpenDoor()
@@ -34,7 +37,7 @@ public class DoorGameElement : GameElement
         if(doorHinge.localScale.y <= 0.1f)
         {
             _openDoor = false;
-            Debug.Log("WON");
+            _boxCollider.enabled = false;
         }
     }
 }

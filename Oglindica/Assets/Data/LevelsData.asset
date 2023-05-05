@@ -19,17 +19,45 @@ MonoBehaviour:
       position: {x: -7.284096, y: 4.10538, z: 0}
       rotation: {x: -0, y: 0, z: 0}
     - type: 2
-      position: {x: 1.5526899, y: 0.56232905, z: 0}
-      rotation: {x: -1.0177775e-13, y: 180, z: 30.465574}
+      position: {x: 7.5873537, y: 2.8635607, z: 0}
+      rotation: {x: 0.0000015383383, y: 180, z: 322.85333}
     - type: 2
-      position: {x: -0.093786985, y: 4.5013676, z: 0}
-      rotation: {x: -0, y: 180, z: 303.69}
+      position: {x: 7.616935, y: 4.194675, z: 0}
+      rotation: {x: 4.07111e-13, y: 180, z: 323.13013}
     - type: 6
-      position: {x: -1.7402633, y: 2.208806, z: 0}
-      rotation: {x: -0, y: 0, z: 0}
-    - type: 8
-      position: {x: -7.9301815, y: -0.33385444, z: 0}
+      position: {x: -6.966168, y: 1.9465706, z: 0}
       rotation: {x: -0, y: 0, z: 0}
     - type: 4
-      position: {x: -3.1574833, y: 0.15592015, z: 0}
+      position: {x: 7.4394526, y: 0.9704194, z: 0}
       rotation: {x: -0, y: 0, z: 0}
+    - type: 8
+      position: {x: -2.322056, y: 2.005731, z: 0}
+      rotation: {x: -0, y: 0, z: 0}
+    - type: 7
+      position: {x: 7.2915506, y: -1.780551, z: 0}
+      rotation: {x: -0, y: 0, z: 0}
+    - type: 6
+      position: {x: -3.7714922, y: 2.0353112, z: 0}
+      rotation: {x: -0, y: 0, z: 0}
+    - type: 8
+      position: {x: -6.877427, y: -0.18321323, z: 0}
+      rotation: {x: -0, y: 0, z: 0}
+    - type: 7
+      position: {x: -0.72471833, y: 2.0353112, z: 0}
+      rotation: {x: -0, y: 0, z: 0}
+    - type: 1
+      position: {x: 5.7533746, y: -2.3425772, z: 0}
+      rotation: {x: -0, y: 180, z: 51.632515}
+    - type: 2
+      position: {x: 7.6465154, y: 5.3778887, z: 0}
+      rotation: {x: -0.0000019199358, y: 180, z: 313.1524}
+    - type: 4
+      position: {x: 6.9070067, y: 1.0887406, z: 0}
+      rotation: {x: -0, y: 0, z: 0}
+    gameGoals:
+    - sensor: {fileID: 0}
+      door: {fileID: 0}
+      isCorrect: 0
+    - sensor: {fileID: 0}
+      door: {fileID: 0}
+      isCorrect: 0

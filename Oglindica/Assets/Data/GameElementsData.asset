@@ -30,7 +30,7 @@ MonoBehaviour:
     gameElement: {fileID: 8199249664819952997, guid: d173ea81fbdeb0640bd5abcc6ed589f2, type: 3}
   - type: 6
     preview: {fileID: 0}
-    gameElement: {fileID: 3076955643572426592, guid: 39987739ccb169c4fb403788610e8bf1, type: 3}
+    gameElement: {fileID: 9105250589769753295, guid: 39987739ccb169c4fb403788610e8bf1, type: 3}
   - type: 7
     preview: {fileID: 0}
     gameElement: {fileID: 4719944388344232548, guid: b0aad5ca19245064a96b24d3cabcec35, type: 3}

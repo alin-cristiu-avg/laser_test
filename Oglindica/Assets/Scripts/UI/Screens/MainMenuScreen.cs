@@ -60,6 +60,7 @@ public class MainMenuScreen : ScreenObject
         UIManager.Instance.LoadScreen(ScreensData.ScreenType.PlayMenu);
         GameManager.Instance.IsInEditor = ScreensData.ScreenType.PlayMenu;
         GameElement.SetIsEditor?.Invoke(GameManager.Instance.IsInEditor);
+        LaserGameElement.UpdateLasers?.Invoke();
     }
 
     private void GoToEdit()

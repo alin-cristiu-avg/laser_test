@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8199249664819952998}
   - component: {fileID: 4911101691891658690}
   m_Layer: 0
-  m_Name: FilterGreen
+  m_Name: FilterYellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
   canRotate: 1
   gameElementType: 4
   movementHelper: {fileID: 8199249664819952998}
-  filterColor: 5
+  filterColor: 0
   filterRenderer: {fileID: 8199249664491584857}
 --- !u!114 &8199249664819952998
 MonoBehaviour:

@@ -35,6 +35,7 @@ public class EditorScreen : ScreenObject
     private void OnEnable()
     {
         InitSelectedLevel();
+        AdditionalInfoHelper.ActivateAdditionalInfo?.Invoke(AdditionalInfoHelper.AdditionalInfoRequired.None, null, null);
     }
 
     private void InitSelectedLevel()
@@ -60,9 +61,12 @@ public class EditorScreen : ScreenObject
     {
         for (int i = 0; i < gameElementsData.GetGameElementsCount(); i++)
         {
-            _spawnedGameElements.Add(Instantiate(gameElementPrefab, gameElementContainer));
-            _spawnedGameElements[_spawnedGameElements.Count - 1].InitGameElement(gameElementsData.GetGameElementByIndex(i));
-            _spawnedGameElements[_spawnedGameElements.Count - 1].SetButtonDelegate();
+            if (gameElementsData.GameElementIsDoor(i) == false)
+            {
+                _spawnedGameElements.Add(Instantiate(gameElementPrefab, gameElementContainer));
+                _spawnedGameElements[_spawnedGameElements.Count - 1].InitGameElement(gameElementsData.GetGameElementByIndex(i));
+                _spawnedGameElements[_spawnedGameElements.Count - 1].SetButtonDelegate();
+            }
         }
     }
 }

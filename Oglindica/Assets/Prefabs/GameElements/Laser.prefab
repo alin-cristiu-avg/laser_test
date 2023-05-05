@@ -131,12 +131,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdfcc66b70c9ac34e8d91bad7488cce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameElementsData: {fileID: 11400000, guid: 37aa8138cd52d5f44a83c3c11604609b, type: 2}
   canMove: 1
   canRotate: 1
   gameElementType: 1
   movementHelper: {fileID: 3749994799186764953}
-  gameElementsData: {fileID: 11400000, guid: 37aa8138cd52d5f44a83c3c11604609b, type: 2}
-  laserPrefab: {fileID: 8390719859686051131, guid: 4c56545fb3d10874a9bedd9b08ec330e, type: 3}
+  laserPrefab: {fileID: 8597126777175441095, guid: 4c56545fb3d10874a9bedd9b08ec330e, type: 3}
   laserContainer: {fileID: 4630495172587348727}
 --- !u!114 &3749994799186764953
 MonoBehaviour:

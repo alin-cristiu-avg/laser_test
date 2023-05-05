@@ -37,7 +37,10 @@ public class MovementManager : MonoBehaviour
             if(_objectToMove != null)
             {
                 _objectToMove.ManageCollider(true);
-                GameManager.Instance.SaveGameElements();
+                if (GameManager.Instance.IsInEditor == ScreensData.ScreenType.Editor)
+                {
+                    GameManager.Instance.SaveGameElements();
+                }
             }
             _objectToMove = null;
         }
@@ -47,7 +50,10 @@ public class MovementManager : MonoBehaviour
             if (_objectToRotate != null)
             {
                 _objectToRotate.ManageCollider(true);
-                GameManager.Instance.SaveGameElements();
+                if (GameManager.Instance.IsInEditor == ScreensData.ScreenType.Editor)
+                {
+                    GameManager.Instance.SaveGameElements();
+                }
             }
             _objectToRotate = null;
         }
@@ -55,6 +61,10 @@ public class MovementManager : MonoBehaviour
         if(Input.GetMouseButton(0) || Input.GetMouseButton(1))
         {
             LaserGameElement.UpdateLasers?.Invoke();
+            if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Delete))
+            {
+                _objectToMove.DeleteElement();
+            }
         }
     }
 
