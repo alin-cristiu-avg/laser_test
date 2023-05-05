@@ -84,7 +84,7 @@ public class LaserGameElement : GameElement
                 }
                 else
                 {
-                    _laserHits.Add(new NormalPos() { pos = _laserHit.point, normal = Vector3.zero });
+                    _laserHits.Add(new NormalPos() { pos = _laserHit.point, normal = Vector3.zero, hitElement = _gameElementComponent });
                 }
             }
             else if(_reflectiveComponent != null)
@@ -93,10 +93,10 @@ public class LaserGameElement : GameElement
                 _laserHits.Add(new NormalPos() { pos = _laserHit.point, normal = reflectedDir, hitElement = _gameElementComponent });
                 LaserCast(_laserHit.point, reflectedDir);
             }
-            else
+            /*else
             {
                 _laserHits.Add(new NormalPos() { pos = _laserHit.point, normal = Vector3.zero });
-            }
+            }*/
         }
     }
 

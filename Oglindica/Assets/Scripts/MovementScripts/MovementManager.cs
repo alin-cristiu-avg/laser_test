@@ -43,6 +43,7 @@ public class MovementManager : MonoBehaviour
                 }
             }
             _objectToMove = null;
+            LaserGameElement.UpdateLasers?.Invoke();
         }
 
         if (Input.GetMouseButtonUp(1))
@@ -56,6 +57,7 @@ public class MovementManager : MonoBehaviour
                 }
             }
             _objectToRotate = null;
+            LaserGameElement.UpdateLasers?.Invoke();
         }
 
         if(Input.GetMouseButton(0) || Input.GetMouseButton(1))

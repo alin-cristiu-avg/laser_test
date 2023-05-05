@@ -1,10 +1,15 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "LevelsData", menuName = "Scriptable Objects/Level Data", order = 1)]
 public class LevelsData : ScriptableObject
 {
+    private const string META_EXTENSION = ".meta";
+    private const string levelsPreviewFolder = "{0}/LevelsPreview";
+
     public List<LevelData> levels = new List<LevelData>();
 
     private int _selectedLevel;
@@ -38,6 +43,60 @@ public class LevelsData : ScriptableObject
     public void SaveSelectedLevelObjects(List<GameElementPositioning> objectsPositions)
     {
         levels[_selectedLevel].gameElementsData = objectsPositions;
+    }
+
+    public void SaveLevelPreview(byte[] screenshotData)
+    {
+        string path = string.Format(levelsPreviewFolder, Application.dataPath);
+        if (!Directory.Exists(path))
+        {
+            Directory.CreateDirectory(path);
+        }
+        string fileName = $"/Preview_{levels[_selectedLevel].levelName}.jpg";
+        levels[_selectedLevel].levelPreviewLocation = path + fileName;
+
+        File.WriteAllBytes(path + fileName, screenshotData);
+
+#if UNITY_EDITOR
+        Debug.Log($"Write record at {path}");
+        AssetDatabase.Refresh();
+#endif
+
+        CheckForUnusedFiles(path);
+    }
+
+    private void CheckForUnusedFiles(string previewDirectory)
+    {
+        DirectoryInfo info = new DirectoryInfo(previewDirectory);
+        FileInfo[] fileInfo = info.GetFiles();
+        foreach (FileInfo file in fileInfo)
+        {
+            if(file.Name.Substring(file.Name.Length-5,5) != META_EXTENSION)
+            {
+                bool isUsed = false;
+                string previewFileName;
+                string[] previewFileSegments;
+                for(int i = 0;i < levels.Count; i++)
+                {
+                    previewFileSegments = levels[i].levelPreviewLocation.Split('/');
+                    previewFileName = previewFileSegments[previewFileSegments.Length - 1];
+                    if (previewFileName == file.Name)
+                    {
+                        isUsed = true;
+                    }
+                }
+
+                if (!isUsed)
+                {
+                    Debug.LogError("Not Used");
+                    //File.Delete(file.FullName);
+                }
+                else
+                {
+                    Debug.LogError("Used");
+                }
+            }
+        }
     }
 
     public void ClearGoals()
@@ -92,6 +151,7 @@ public class LevelsData : ScriptableObject
 public class LevelData
 {
     public string levelName;
+    public string levelPreviewLocation;
     public List<GameElementPositioning> gameElementsData = new List<GameElementPositioning>();
     public List<GameGoals> gameGoals = new List<GameGoals>();
 

@@ -21,7 +21,11 @@ public class EditorScreen : ScreenObject
     {
         mainMenuButton.Text.text = "Main Menu";
         mainMenuButton.Button.onClick.RemoveAllListeners();
-        mainMenuButton.Button.onClick.AddListener(GoToMainMenu);
+        mainMenuButton.Button.onClick.AddListener(() =>
+        {
+            GoToMainMenu();
+            ScreenshotManager.Instance.TakeScreenshot();
+        });
 
         levelNameField.Field.onEndEdit.RemoveAllListeners();
         levelNameField.Field.onEndEdit.AddListener(SetLevelName);

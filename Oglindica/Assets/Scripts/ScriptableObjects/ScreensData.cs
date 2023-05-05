@@ -11,7 +11,8 @@ public class ScreensData : ScriptableObject
         MainMenu,
         Editor,
         PlayMenu,
-        WonMenu
+        WonMenu,
+        SaveImage
     }
 
     public List<Screens> screens = new List<Screens>();

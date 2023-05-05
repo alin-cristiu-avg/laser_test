@@ -19,7 +19,7 @@ public class GameElementUI : MonoBehaviour
     {
         _gameElementStructure = gameElementData;
 
-        //levelImage.sprite = ;
+        levelImage.sprite = gameElementData.preview;
         levelName.Text.text = _gameElementStructure.type.ToString();
     }
 

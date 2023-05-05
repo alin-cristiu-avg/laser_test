@@ -14,28 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameElements:
   - type: 1
-    preview: {fileID: 0}
+    preview: {fileID: 21300000, guid: f1de9535b4d5b2f40871c80119e45dc5, type: 3}
     gameElement: {fileID: 4156338931349080639, guid: edbf0d1b3e7164d4ab5652a9f945a731, type: 3}
   - type: 2
-    preview: {fileID: 0}
+    preview: {fileID: 21300000, guid: 756d00c9c4175f54e8a34536d61b42b6, type: 3}
     gameElement: {fileID: 6560291874649588281, guid: 55527830b72e89e4a965eba77e185c9d, type: 3}
   - type: 3
-    preview: {fileID: 0}
+    preview: {fileID: 21300000, guid: 6be0cb525f3cb7c40bb1d74a47d1c17b, type: 3}
     gameElement: {fileID: 8199249664819952997, guid: f61a1ea660e9da44b85c14d9f898e4de, type: 3}
   - type: 4
-    preview: {fileID: 0}
+    preview: {fileID: 21300000, guid: a0dc37a07cd76c446b3eec8e952ed3b6, type: 3}
     gameElement: {fileID: 8199249664819952997, guid: 4af5211285b452545aecdb38167f4cd3, type: 3}
   - type: 5
-    preview: {fileID: 0}
+    preview: {fileID: 21300000, guid: c7b083a6bcf33264a9c3db532527546f, type: 3}
     gameElement: {fileID: 8199249664819952997, guid: d173ea81fbdeb0640bd5abcc6ed589f2, type: 3}
   - type: 6
-    preview: {fileID: 0}
+    preview: {fileID: 21300000, guid: a52f2d02e664bff4098d4562a4a8f173, type: 3}
     gameElement: {fileID: 9105250589769753295, guid: 39987739ccb169c4fb403788610e8bf1, type: 3}
   - type: 7
-    preview: {fileID: 0}
+    preview: {fileID: 21300000, guid: eba6847e78d18094988ccffa4a8783de, type: 3}
     gameElement: {fileID: 4719944388344232548, guid: b0aad5ca19245064a96b24d3cabcec35, type: 3}
   - type: 8
-    preview: {fileID: 0}
+    preview: {fileID: 21300000, guid: 3ecff70265a07924d9dc5f28311df717, type: 3}
     gameElement: {fileID: 203704494169560492, guid: 36d49a2147efad945ae17af466043801, type: 3}
   colors:
   - type: 0
